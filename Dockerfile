@@ -19,11 +19,14 @@ RUN apt-get update && apt-get install -y hashcat
 RUN pip3 install --upgrade pip
 
 # Copy your Python script to the container
-# (Replace my_script.py with your actual script)
+# (Replace help_crack.py with your actual script)
 COPY help_crack.py /app/help_crack.py
 
-# Set the working directory
-WORKDIR /app
+# Create a subfolder for script output
+RUN mkdir -p /app/data
 
-# Define the default command to run the script
-CMD ["python3", "help_crack.py", "-co=--deprecated-check-disable"]
+# Set the working directory to the subfolder
+WORKDIR /app/data
+
+# Run the script with relative paths 
+CMD ["python3", "../help_crack.py", "-co=--deprecated-check-disable, "potfile=cracked.potfile"]
