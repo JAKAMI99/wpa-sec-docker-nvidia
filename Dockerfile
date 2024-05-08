@@ -24,7 +24,7 @@ RUN pip3 install --upgrade pip
 
 # Copy your Python script to the container
 # (Replace my_script.py with your actual script)
-COPY my_script.py /app/my_script.py
+COPY help_crack.py /app/help_crack.py
 
 # Set the working directory
 WORKDIR /app
