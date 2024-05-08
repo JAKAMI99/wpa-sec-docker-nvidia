@@ -1,6 +1,6 @@
 # [WPA-Sec](https://wpa-sec.stanev.org/) Docker (Nvidia)
 ## About
-This docker container runs the help_crack.py from [wpa-sec](https://wpa-sec.stanev.org/), a "Distributed WPA PSK auditor". Especially because the pwnagotchi community uses it a lot.
+This docker container runs the help_crack.py from [wpa-sec](https://wpa-sec.stanev.org/), a "Distributed WPA PSK auditor". The docker container utilizes the ubuntu 22.04 hashcat binary.
 
 The docker container currently only supports NVIDIA GPUs. Feel free to PR support for AMD 
 ## Install & Run
