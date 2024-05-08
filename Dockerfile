@@ -29,4 +29,4 @@ RUN mkdir -p /app/data
 WORKDIR /app/data
 
 # Run the script with relative paths 
-CMD ["python3", "../help_crack.py", "-co=--deprecated-check-disable", "potfile=cracked.potfile"]
+CMD ["python3", "../help_crack.py", "-co=--deprecated-check-disable", "[-pot cracked.potfile"]
