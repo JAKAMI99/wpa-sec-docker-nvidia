@@ -26,4 +26,4 @@ COPY help_crack.py /app/help_crack.py
 WORKDIR /app
 
 # Define the default command to run the script
-CMD ["python3", "help_crack.py", "-co --deprecated-check-disable"]
+CMD ["python3", "help_crack.py", "-co=--deprecated-check-disable"]
