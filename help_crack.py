@@ -831,6 +831,7 @@ class HelpCrack(object):
                 or keypair[0]['key'] != bytearray(netdata[0]['key'], 'utf-8', errors='ignore') \
                 or keypair[1]['key'] != bytearray(netdata[0]['key'], 'utf-8', errors='ignore'):
             self.pprint('Challenge solving failed! Check if your cracker runs correctly.', 'FAIL')
+            exit(1)
 
         hashcache = set()
         netdata = self.resume_check()
