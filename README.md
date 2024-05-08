@@ -1,5 +1,8 @@
 # WPA-Sec Docker for Nvidia
+## About
+This docker container runs the the help_crack.py from wpa-sec, a "Distributed WPA PSK auditor". Especially because the pwnagotchi community uses it alot.
 
+The docker container currently only supports nvidia GPUs. Feel free to PR support for AMD 
 ## Install & Run
 ```
 docker run -it --gpus all -e NVIDIA_VISIBLE_DEVICES=all -e NVIDIA_DRIVER_CAPABILITIES=all wpas-ec-docker-nividia
@@ -17,4 +20,5 @@ git clone https://github.com/JAKAMI99/wpa-sec-docker-nvidia
 cd wpa-sec-docker-nvidia
 docker build -t wpa-sec-docker-nvidia:latest .
 docker run -it --gpus all -v $HOME/.docker-data/wpa-sec-docker:/app -e NVIDIA_VISIBLE_DEVICES=all -e NVIDIA_DRIVER_CAPABILITIES=all wpa-sec-docker-nividia:latest
-```
+```hashcat
+Version: 6.2.5+ds1

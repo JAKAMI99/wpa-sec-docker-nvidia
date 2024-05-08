@@ -12,12 +12,8 @@ RUN apt-get update && apt-get install -y \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-# Install Hashcat
-RUN wget https://github.com/hashcat/hashcat/releases/download/v6.2.6/hashcat-6.2.6.7z \
-    && apt-get install -y p7zip-full \
-    && 7z x hashcat-6.2.6.7z \
-    && mv hashcat-6.2.6 /usr/local/hashcat \
-    && ln -s /usr/local/hashcat/hashcat /usr/bin/hashcat
+# Install Hashcat from repository
+RUN apt-get update && apt-get install -y hashcat
 
 # Set up the Python environment
 RUN pip3 install --upgrade pip
