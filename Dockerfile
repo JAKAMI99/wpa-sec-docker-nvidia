@@ -30,14 +30,14 @@ RUN mkdir -p /hashcat && \
 # Set up the Python environment
 RUN pip3 install --upgrade pip
 
-# Copy your Python script to the container
-COPY help_crack.py /app/help_crack.py
-
 # Create a subfolder for script output
 RUN mkdir -p /app/data
 
 # Set the working directory to the script output folder
 WORKDIR /app/data
 
+# Pull fresh help_crack.py script
+ADD https://wpa-sec.stanev.org/hc/help_crack.py /app/help_crack.py
+
 # Run the Python script
-CMD ["python3", "../help_crack.py", "-co=--deprecated-check-disable", "--pot", "cracked.potfile"]
+CMD ["python3", "../help_crack.py", "--pot", "cracked.potfile"]
