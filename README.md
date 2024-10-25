@@ -3,6 +3,11 @@
 This docker container runs latest the help_crack.py from the [wpa-sec](https://wpa-sec.stanev.org/hc/help_crack.py), a "Distributed WPA PSK auditor". The docker container utilizes the ubuntu 22.04 hashcat binary.
 
 The docker container currently only supports NVIDIA GPUs. Feel free to PR support for AMD 
+
+## Prerequisites:
+You need the `NVIDIA Container Toolkit` in order to run this container.
+First install it from [HERE](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#installation) and restart your docker daemon `sudo systemctl restart docker` 
+
 ## Install from Dockerhub (recommended)
 ```
 docker pull jakami/wpa-sec-docker-nvidia:latest
@@ -21,7 +26,6 @@ git clone https://github.com/JAKAMI99/wpa-sec-docker-nvidia
 cd wpa-sec-docker-nvidia
 docker build -t wpa-sec-docker-nvidia:latest .
 docker run -it --gpus all -v $HOME/.docker-data/wpa-sec-docker:/app/data -e NVIDIA_VISIBLE_DEVICES=all -e NVIDIA_DRIVER_CAPABILITIES=all jakami/wpa-sec-docker-nvidia:latest
-
 ```
 pwnamap
 ## Potfile

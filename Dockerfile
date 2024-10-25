@@ -37,8 +37,8 @@ RUN mkdir -p /app/data
 WORKDIR /app/data
 
 # Entrypoint script to dynamically pull the latest Python script and run it
-COPY entry.sh /app/entrypoint.sh
-RUN chmod +x /app/entrypoint.sh
+COPY entry.sh /app/entry.sh
+RUN chmod +x /app/entry.sh
 
 # Set the entrypoint to the custom script
 ENTRYPOINT ["/app/entry.sh"]
