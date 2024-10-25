@@ -1,11 +1,10 @@
 name: Docker Image CI
 
 on:
-  workflow_run:
-    workflows: ["check_update"]
-    types:
-      - completed  # check
-
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 
 jobs:
 

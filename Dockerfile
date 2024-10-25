@@ -36,8 +36,10 @@ RUN mkdir -p /app/data
 # Set the working directory to the script output folder
 WORKDIR /app/data
 
-# Pull fresh help_crack.py script
-ADD https://wpa-sec.stanev.org/hc/help_crack.py /app/help_crack.py
+# Entrypoint script to dynamically pull the latest Python script and run it
+COPY entry.sh /app/entrypoint.sh
+RUN chmod +x /app/entrypoint.sh
 
-# Run the Python script
-CMD ["python3", "../help_crack.py", "--pot", "cracked.potfile"]
+# Set the entrypoint to the custom script
+ENTRYPOINT ["/app/entry.sh"]
+
