@@ -23,21 +23,21 @@ jobs:
       - name: Compare Commits
         id: compare
         run: |
-          # Überprüfen, ob der letzte Commit anders ist als der gespeicherte Commit
+
           if [ "$last_commit" != "$(cat last_commit_sha.txt 2>/dev/null)" ]; then
             echo "New version available!"
-            exit 1  # Workflow fehlschlagen, wenn eine neue Version verfügbar ist
+            exit 1  # Fail workflow when current version is not latest
           else
             echo "No new version."
           fi
 
       - name: Upload new commit SHA as artifact
-        if: success()  # Nur ausführen, wenn der vorherige Schritt erfolgreich war
+        if: success()
         run: |
           echo $last_commit > last_commit_sha.txt
           
       - name: Upload Last Commit SHA
-        if: success()  # Nur ausführen, wenn der vorherige Schritt erfolgreich war
+        if: success()
         uses: actions/upload-artifact@v3
         with:
           name: last-commit-sha
