@@ -24,7 +24,7 @@ docker-compose up
 ```
 git clone https://github.com/JAKAMI99/wpa-sec-docker-nvidia
 cd wpa-sec-docker-nvidia
-docker build -t wpa-sec-docker-nvidia:latest .
+docker build -t jakami/wpa-sec-docker-nvidia:latest .
 docker run -it --gpus all -v $HOME/.docker-data/wpa-sec-docker:/app/data -e NVIDIA_VISIBLE_DEVICES=all -e NVIDIA_DRIVER_CAPABILITIES=all jakami/wpa-sec-docker-nvidia:latest
 ```
 pwnamap
