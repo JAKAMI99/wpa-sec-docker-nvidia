@@ -7,6 +7,7 @@ The docker container currently only supports NVIDIA GPUs. Feel free to PR suppor
 ## Prerequisites:
 You need the `NVIDIA Container Toolkit` in order to run this container.
 First install it from [HERE](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#installation) and restart your docker daemon `sudo systemctl restart docker` 
+# Installing methods:
 
 ## Install from Dockerhub (recommended)
 ```

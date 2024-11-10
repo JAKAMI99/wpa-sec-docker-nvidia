@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   wpa-sec:
-    image: wpa-sec-docker-nividia:latest
+    image: jakami/wpa-sec-docker-nividia:latest
     stdin_open: true  # equivalent to -i
     tty: true         # equivalent to -t
     runtime: nvidia   # necessary for GPU support with Docker and NVIDIA
