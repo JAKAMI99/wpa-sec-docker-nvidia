@@ -14,6 +14,11 @@ First install it from [HERE](https://docs.nvidia.com/datacenter/cloud-native/con
 docker pull jakami/wpa-sec-docker-nvidia:latest
 docker run -it --gpus all -v $HOME/.docker-data/wpa-sec-docker:/app/data -e NVIDIA_VISIBLE_DEVICES=all -e NVIDIA_DRIVER_CAPABILITIES=all jakami/wpa-sec-docker-nvidia:latest
 ```
+## Oneliner for Windows 
+```
+docker run -it --gpus all -v %USERPROFILE%\.docker-data\wpa-sec-docker:/app/data -e NVIDIA_VISIBLE_DEVICES=all -e NVIDIA_DRIVER_CAPABILITIES=all jakami/wpa-sec-docker-nvidia:latest
+```
+(Thanks to @HackCocaine in #5)
 ## Docker Compose build and run
 ```
 git clone https://github.com/JAKAMI99/wpa-sec-docker-nvidia.git
