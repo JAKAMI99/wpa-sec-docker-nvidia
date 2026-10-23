@@ -1,14 +1,15 @@
-# Start with the NVIDIA CUDA base image
-FROM nvidia/cuda:12.1.1-devel-ubuntu22.04
+# Start with the NVIDIA CUDA base image (Ubuntu 24.04 LTS)
+FROM nvidia/cuda:12.9.2-devel-ubuntu24.04
 
 LABEL com.nvidia.volumes.needed="nvidia_driver"
 
+ENV DEBIAN_FRONTEND=noninteractive
+
 # Update and install essential packages
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && apt-get upgrade -y && apt-get install -y --no-install-recommends \
     ca-certificates \
     build-essential \
     python3 \
-    python3-pip \
     git \
     curl \
     wget \
@@ -26,9 +27,6 @@ RUN mkdir -p /hashcat && \
     git submodule update --init && \
     make install && \
     rm -rf .git
-
-# Set up the Python environment
-RUN pip3 install --upgrade pip
 
 # Create a subfolder for script output
 RUN mkdir -p /app/data
